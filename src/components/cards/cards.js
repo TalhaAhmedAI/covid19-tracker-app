@@ -23,7 +23,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 separator=","
               />
             </Typography>
-            <Typography color="textSecondary">{lastUpdate}</Typography>
+            <Typography color="textSecondary">
+              {new Date(lastUpdate).toDateString()}
+            </Typography>
             <Typography>Number of Active cases of Covid-19</Typography>
           </CardContent>
         </Grid>
@@ -32,8 +34,17 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary" gutterBottom>
               Recovered
             </Typography>
-            <Typography variant="h5">Real Data</Typography>
-            <Typography color="textSecondary">Date</Typography>
+            <Typography variant="h5">
+              <CountUp
+                start={0}
+                end={recovered.value}
+                duration={2.5}
+                separator=","
+              />
+            </Typography>
+            <Typography color="textSecondary">
+              {new Date(lastUpdate).toDateString()}
+            </Typography>
             <Typography>Number of Recoveries from Covid-19</Typography>
           </CardContent>
         </Grid>
@@ -42,8 +53,17 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary" gutterBottom>
               Deaths
             </Typography>
-            <Typography variant="h5">Real Data</Typography>
-            <Typography color="textSecondary">Date</Typography>
+            <Typography variant="h5">
+              <CountUp
+                start={0}
+                end={deaths.value}
+                duration={2.5}
+                separator=","
+              />
+            </Typography>
+            <Typography color="textSecondary">
+              {new Date(lastUpdate).toDateString()}
+            </Typography>
             <Typography>Number of Deaths from Covid-19</Typography>
           </CardContent>
         </Grid>
