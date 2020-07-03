@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import CountUp from "react-countup";
+import cn from "classnames";
 import styles from "./cards.module.css";
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
@@ -10,7 +11,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
-        <Grid item component={Card}>
+        <Grid
+          item
+          component={Card}
+          xs={12}
+          md={3}
+          className={cn(styles.card, styles.infected)}
+        >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Infected
@@ -29,7 +36,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography>Number of Active cases of Covid-19</Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card}>
+        <Grid
+          item
+          xs={12}
+          md={3}
+          component={Card}
+          className={cn(styles.card, styles.recovered)}
+        >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Recovered
@@ -48,7 +61,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography>Number of Recoveries from Covid-19</Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card}>
+        <Grid
+          item
+          xs={12}
+          md={3}
+          component={Card}
+          className={cn(styles.card, styles.deaths)}
+        >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Deaths
