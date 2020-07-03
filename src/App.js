@@ -7,11 +7,11 @@ function App() {
   const [data, setData] = useState({});
   useEffect(() => {
     async function getData() {
-      const response = await fetchData();
-      setData({ data: response });
+      const data = await fetchData();
+      setData(data);
     }
     getData();
-  });
+  }, []);
 
   return (
     <div className={styles.container}>
