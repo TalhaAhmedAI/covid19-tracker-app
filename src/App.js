@@ -5,7 +5,6 @@ import { fetchData } from "./api";
 
 function App() {
   const [data, setData] = useState({});
-  const [country, setCountry] = useState({});
 
   useEffect(() => {
     async function getData() {
