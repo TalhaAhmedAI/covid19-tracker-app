@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Cards, Chart, CountryPicker, Demo } from "./components";
+import { Cards, Chart, CountryPicker } from "./components";
 import NavBar from "./components/navBar/navBar";
 import styles from "./App.module.css";
 import { fetchData } from "./api";
